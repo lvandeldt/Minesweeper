@@ -104,10 +104,6 @@ public class Board extends JPanel {
                             return;
                         } else { // ... reveal if not a mine.
                             trigger.reveal();
-                            if (num_revealed == (board_height * board_width) - num_mines) {
-                                // TODO: Game win logic.
-                                System.out.println("Win");
-                            }
                         }
 
                     }
@@ -129,6 +125,13 @@ public class Board extends JPanel {
             }
 
             updateParent();
+
+            // Check win.
+            if (num_revealed == (board_height * board_width) - num_mines) {
+                // TODO: Game win logic.
+                System.out.println("Win");
+                game_over = true;
+            }
 
         }
 
@@ -196,9 +199,13 @@ public class Board extends JPanel {
             for (int j = 0; j < board_width; j++) {
                 if (cells[i][j].getState() != State.FLAGGED && cells[i][j].isMine()) {
                     // Show mine
-                    cells[i][j].setText("M");
+                    if (cells[i][j].getBackground() != Color.RED) { // Don't affect triggered cell.
+                        cells[i][j].setIcon(Cell.ICON_MINE);
+                    } else {
+                        cells[i][j].setIcon(Cell.ICON_BOOM);
+                    }
                 } else if (cells[i][j].getState() == State.FLAGGED && !cells[i][j].isMine()) {
-                    cells[i][j].setText("!");
+                    cells[i][j].setIcon(Cell.ICON_NOPE);
                 }
             }
         }

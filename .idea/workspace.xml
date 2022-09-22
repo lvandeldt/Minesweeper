@@ -9,20 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebba1acb-7d2e-4735-8ed8-33e76bf2dfc5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Minesweeper_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Minesweeper.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/Cell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/ChordResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/Minesweeper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/State.java" afterDir="false" />
+    <list default="true" id="76b1b2a8-ee2a-42f8-b529-b75d53996dd0" name="Changes" comment="Visual improvements and bug fixes.">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/images/explosion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/images/flag.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/images/mine.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/images/no-bomb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/images/question.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/Minesweeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/Minesweeper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +36,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="SOFT" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -51,17 +49,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/lewis/IdeaProjects/MinesweeperRewrite/out/artifacts/Minesweeper_jar/Minesweeper.jar",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lewis/IdeaProjects/MinesweeperRewrite/src/com/vandeldt/minesweeper/images&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lewis\IdeaProjects\MinesweeperRewrite\src\com\vandeldt\minesweeper\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lewis\IdeaProjects\MinesweeperRewrite\src\com\vandeldt\minesweeper\images" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Minesweeper">
     <configuration name="Minesweeper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.vandeldt.minesweeper.Minesweeper" />
@@ -105,6 +111,28 @@
       <option name="presentableId" value="Default" />
       <updated>1662672893803</updated>
     </task>
+    <task id="LOCAL-00001" summary="First commit with basic functionality.">
+      <created>1662682518003</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1662682518003</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Visual improvements and bug fixes.">
+      <created>1662945056047</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1662945056047</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Visual improvements and bug fixes.">
+      <created>1663873272646</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1663873272646</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,10 +140,21 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit with basic functionality." />
+    <MESSAGE value="Visual improvements and bug fixes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Visual improvements and bug fixes." />
   </component>
 </project>

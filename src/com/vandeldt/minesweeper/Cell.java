@@ -9,14 +9,33 @@ import java.util.List;
 public class Cell extends JButton {
 
     // Cell constants
-    static final int CELL_WIDTH = 25;
-    static final int CELL_HEIGHT = 25;
-    static final Color DEF_BG_COL = Color.GRAY;
-    static final Color DEF_BD_COL = Color.DARK_GRAY;
+    static final int CELL_WIDTH = 26;
+    static final int CELL_HEIGHT = 26;
+    static final Color DEF_BG_COL = Color.LIGHT_GRAY;
+    static final Color DEF_BD_COL = Color.GRAY;
     static final Color TRIPPED_MINE_COL = Color.RED;
     static final Color PROXY_TRIPPED_MINE_COL = Color.ORANGE;
-    static final Color REVEALED_CELL_COL = Color.LIGHT_GRAY;
+    static final Color REVEALED_CELL_COL = Color.WHITE;
+    static final Color DEF_FG_COL = Color.BLACK;
+    static final Color[] ADJ_TEXT_COL = {
+            Color.WHITE, // 0
+            Color.BLUE, // 1
+            new Color(0, 100, 0), // 2
+            Color.RED, // 3
+            new Color(139, 0, 139), // 4
+            new Color(128,0,0), // 5
+            new Color(48, 213, 200), // 6
+            Color.BLACK, // 7
+            Color.GRAY, // 8
+    };
 
+    // Icons (Mostly by Sirea, http://www.rw-designer.com/user/5920)
+
+    static final ImageIcon ICON_FLAG = scaledIcon("images/flag.png"); // Flag
+    static final ImageIcon ICON_QUESTION = scaledIcon("images/question.png"); // Possible flag
+    static final ImageIcon ICON_MINE = scaledIcon("images/mine.png"); // Mine Icon
+    static final ImageIcon ICON_BOOM = scaledIcon("images/explosion.png"); // Triggered Mine Icon
+    static final ImageIcon ICON_NOPE = scaledIcon("images/no-bomb.png"); // Wrong Flag Icon
 
     // Initialise cell attributes
     private List<Cell> neighbours = new ArrayList<>();
@@ -30,10 +49,13 @@ public class Cell extends JButton {
 
         // Set up default appearance
         this.setBackground( DEF_BG_COL );
+        this.setForeground( DEF_FG_COL );
         this.setBorder(new LineBorder(DEF_BD_COL));
         this.setPreferredSize(new Dimension(CELL_WIDTH, CELL_HEIGHT));
         this.setHorizontalAlignment(CENTER);
         this.setVerticalAlignment(CENTER);
+
+        this.setContentAreaFilled(true);
 
     }
 
@@ -44,7 +66,7 @@ public class Cell extends JButton {
                 this.state = State.FLAGGED;
 
                 // Change cell to show flagged
-                this.setText("F");
+                this.setIcon(ICON_FLAG);
 
                 // Remove flag from remaining pool
                 Board.flags_remaining--;
@@ -53,7 +75,7 @@ public class Cell extends JButton {
                 this.state = State.POSSIBLE;
 
                 // Change cell to show possible
-                this.setText("?");
+                this.setIcon(ICON_QUESTION);
 
                 // Add flag back to remaining pool.
                 Board.flags_remaining++;
@@ -62,7 +84,7 @@ public class Cell extends JButton {
                 this.state = State.DEFAULT;
 
                 // Remove flag indicators.
-                this.setText("");
+                this.setIcon(null);
             }
         }
     }
@@ -80,7 +102,6 @@ public class Cell extends JButton {
             } else if (neighbour.is_mine) {
                 mine_found = true;
                 mine_location = neighbour;
-                break;
             }
         }
 
@@ -116,9 +137,14 @@ public class Cell extends JButton {
 
     // Method to reveal cell
     public void reveal() {
-
-        // Check that cell isn't already revealed first (makes chord function easier)
+        // Check that cell isn't already revealed or flagged first (makes chord function easier)
         if (this.state == State.DEFAULT) {
+
+            // If for some reason we try to reveal a mine, throw an error.
+            if (this.is_mine) {
+                throw new Error("Cannot reveal a mined cell!");
+            }
+
             this.state = State.REVEALED;
 
             // Change appearance to show revealed.
@@ -131,6 +157,7 @@ public class Cell extends JButton {
             if (adjacent_mines > 0) {
 
                 this.setText(Integer.toString(adjacent_mines));
+                this.setForeground(ADJ_TEXT_COL[adjacent_mines]);
 
             } else {
 
@@ -168,6 +195,7 @@ public class Cell extends JButton {
         // If setting back to default, change appearance back.
         if (this.state == State.DEFAULT) {
             this.setBackground(DEF_BG_COL);
+            this.setForeground(DEF_FG_COL);
             this.setText("");
             this.setIcon(null);
         }
@@ -179,5 +207,12 @@ public class Cell extends JButton {
 
     public void setMine(boolean mine) {
         is_mine = mine;
+    }
+
+    private static ImageIcon scaledIcon(String path) {
+        ImageIcon unscaled = new ImageIcon(Cell.class.getResource( path ));
+        Image scaledImage = unscaled.getImage().getScaledInstance(CELL_WIDTH - 2, CELL_HEIGHT - 2, 0);
+
+        return new ImageIcon(scaledImage);
     }
 }

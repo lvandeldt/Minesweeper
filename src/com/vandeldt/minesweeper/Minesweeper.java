@@ -52,7 +52,7 @@ public class Minesweeper extends JFrame {
         add(lbl_score, constraints);
 
         // Reset button
-        btn_reset = new JButton("Reset Test");
+        btn_reset = new JButton("Reset");
         constraints.gridx = 2;
         constraints.gridy = 1;
         constraints.weightx = 0.1;
