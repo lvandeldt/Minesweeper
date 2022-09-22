@@ -9,16 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76b1b2a8-ee2a-42f8-b529-b75d53996dd0" name="Changes" comment="Visual improvements and bug fixes.">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/images/explosion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/images/flag.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/images/mine.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/images/no-bomb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/images/question.png" afterDir="false" />
+    <list default="true" id="76b1b2a8-ee2a-42f8-b529-b75d53996dd0" name="Changes" comment="Added a menu screen to select difficulty / board size, fixed more discovered bugs and cleaned up some other code.">
+      <change afterPath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/Minesweeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vandeldt/minesweeper/Minesweeper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -49,17 +45,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/lewis/IdeaProjects/MinesweeperRewrite/src/com/vandeldt/minesweeper/images&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/lewis/IdeaProjects/MinesweeperRewrite/src/com/vandeldt/minesweeper/images",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\lewis\IdeaProjects\MinesweeperRewrite\src\com\vandeldt\minesweeper\images" />
@@ -68,9 +64,61 @@
       <recent name="C:\Users\lewis\IdeaProjects\MinesweeperRewrite\src\com\vandeldt\minesweeper\images" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Minesweeper">
-    <configuration name="Minesweeper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.vandeldt.minesweeper.Minesweeper" />
+  <component name="RunManager" selected="Application.Menu (1)">
+    <configuration name="Menu (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.vandeldt.minesweeper.Menu" />
+      <module name="Minesweeper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vandeldt.minesweeper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Menu (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.vandeldt.minesweeper.Menu" />
+      <module name="Minesweeper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vandeldt.minesweeper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Menu (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.vandeldt.minesweeper.Menu" />
+      <module name="Minesweeper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vandeldt.minesweeper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Menu (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.vandeldt.minesweeper.Menu" />
+      <module name="Minesweeper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vandeldt.minesweeper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Menu (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.vandeldt.minesweeper.Menu" />
       <module name="Minesweeper" />
       <extension name="coverage">
         <pattern>
@@ -93,12 +141,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Minesweeper" />
+      <item itemvalue="Application.Menu (1)" />
+      <item itemvalue="Application.Menu (2)" />
+      <item itemvalue="Application.Menu (3)" />
+      <item itemvalue="Application.Menu (4)" />
+      <item itemvalue="Application.Menu (5)" />
       <item itemvalue="JAR Application.Minesweeper" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Minesweeper" />
+        <item itemvalue="Application.Menu (1)" />
+        <item itemvalue="Application.Menu (5)" />
+        <item itemvalue="Application.Menu (4)" />
+        <item itemvalue="Application.Menu (3)" />
+        <item itemvalue="Application.Menu (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -132,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663873272646</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Visual improvements and bug fixes.">
+      <created>1663873581093</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1663873581093</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,6 +218,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit with basic functionality." />
     <MESSAGE value="Visual improvements and bug fixes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Visual improvements and bug fixes." />
+    <MESSAGE value="Added a menu screen to select difficulty / board size, fixed more discovered bugs and cleaned up some other code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a menu screen to select difficulty / board size, fixed more discovered bugs and cleaned up some other code." />
   </component>
 </project>

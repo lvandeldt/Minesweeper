@@ -11,11 +11,9 @@ public class Board extends JPanel {
     // Initialise board attributes.
     public static int num_revealed = 0;
     public static int flags_remaining;
-    private int board_height;
-    private int board_width;
-    private int num_mines;
+    private final int board_height, board_width, num_mines;
     private boolean game_over = false;
-    private Cell[][] cells;
+    private final Cell[][] cells;
 
     // Constructor
     public Board(int height, int width, int mines) {
@@ -62,7 +60,7 @@ public class Board extends JPanel {
             }
         }
 
-        // Once all cells are set up, go back and link all neighbours to eachother.
+        // Once all cells are set up, go back and link all neighbours to each other.
         for(int i = 0; i < board_height; i++) {
             for(int j = 0; j < board_width; j++) {
                 for(int d_row = -1; d_row <= 1; d_row++) {
@@ -97,7 +95,8 @@ public class Board extends JPanel {
                         if (trigger.isMine() && num_revealed == 0) { // ... move mine if we hit it first go.
                             trigger.setMine(false);
                             armMines(1);
-                            trigger.reveal();
+                            update(trigger, button);
+                            return;
                         } else if (trigger.isMine()) { // ... trip mine if not first go.
                             trigger.setBackground(Cell.TRIPPED_MINE_COL);
                             endGame();
@@ -128,22 +127,31 @@ public class Board extends JPanel {
 
             // Check win.
             if (num_revealed == (board_height * board_width) - num_mines) {
-                // TODO: Game win logic.
-                System.out.println("Win");
-                game_over = true;
+                gameWin();
             }
 
         }
 
     }
 
+    public void gameWin() {
+        game_over = true;
+
+        JOptionPane.showMessageDialog(this, "Congratulations, You Win! :)",
+                "Winner!", JOptionPane.PLAIN_MESSAGE);
+
+    }
+
     // Method to update labels on parent
     public void updateParent() {
         // Update labels on parent window
-        Container parent = this.getParent();
-        JLabel lbl_remaining_flags = (JLabel) parent.getComponentAt(1, 1);
-        JLabel lbl_score = (JLabel) parent.getComponentAt(parent.getWidth() - 1, 1);
 
+        // Get the Minesweeper window: Board < JPanel < JLayeredPane < JRootPane < Minesweeper
+        Minesweeper parent = ((Minesweeper) this.getParent().getParent().getParent().getParent());
+        JLabel lbl_remaining_flags = parent.lbl_remaining_flags;
+        JLabel lbl_score = parent.lbl_score;
+
+        // Update labels
         lbl_remaining_flags.setText( Integer.toString(flags_remaining) );
         lbl_score.setText( Integer.toString(num_revealed) );
     }

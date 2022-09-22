@@ -2,35 +2,32 @@ package com.vandeldt.minesweeper;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Minesweeper extends JFrame {
 
     // Interface components
-    private JLabel lbl_remaining_flags;
-    private JLabel lbl_score;
-    private JButton btn_reset;
+    public JLabel lbl_remaining_flags;
+    public JLabel lbl_score;
 
-    private GridBagConstraints constraints = new GridBagConstraints();
-    private Board board;
-
+    private final Board board;
 
     // Constructor
-    public Minesweeper() {
+    public Minesweeper(int height, int width, int mines) {
 
         // Create JFrame and set up window
         super("Minesweeper");
-
+        this.setIconImage( Cell.ICON_MINE.getImage() );
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
         this.setLayout(new GridBagLayout());
+        GridBagConstraints constraints = new GridBagConstraints();
+
         this.setResizable(false);
 
-
-        // Set up board TODO: Make customisable size.
-        board = new Board(16, 30, 99);
+        board = new Board(height, width, mines);
 
         // Set up UI.
+
         constraints.weightx = 1;
         constraints.weighty = 1;
         constraints.fill = 1;
@@ -52,16 +49,12 @@ public class Minesweeper extends JFrame {
         add(lbl_score, constraints);
 
         // Reset button
-        btn_reset = new JButton("Reset");
+        JButton btn_reset = new JButton("Reset");
         constraints.gridx = 2;
         constraints.gridy = 1;
         constraints.weightx = 0.1;
 
-        btn_reset.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                board.reset();
-            }
-        });
+        btn_reset.addActionListener(e -> board.reset());
 
         add(btn_reset, constraints);
 
@@ -74,9 +67,5 @@ public class Minesweeper extends JFrame {
         // Show window
         this.pack();
         this.setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        new Minesweeper();
     }
 }
